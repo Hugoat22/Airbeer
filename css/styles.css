@@ -4,3 +4,10 @@
     margin: 0;
 }
 
+body{
+    background: #51546c;
+}
+
+form {
+    margin: 100px 1000px !important;
+}

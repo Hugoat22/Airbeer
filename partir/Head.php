@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <?php echo ("<title> $titre </title>") ?>
+    <?php echo ("<title>$titre</title>") ?>
 
     <link rel="icon" href="#" />
 

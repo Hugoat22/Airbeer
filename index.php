@@ -1,12 +1,17 @@
 <?php
+    require_once __DIR__."/config.php";
     $titre = "Airbeer"
 ?>
 
 <html>
     <?php
-        require("partir/Head.php");
-        require("partir/Nav.php");
+        require Airbeer."/partir/Head.php";
+        require Airbeer."/partir/Nav.php";
     ?>
 
-    <?php require("") ?>
+    <body>
+
+    </body>
+
+    <?php require Airbeer."/partir/Footer.php"; ?>
 </html>
