@@ -1,12 +1,13 @@
 <?php
-    require_once "../config.php";
-    $titre = "Se Connecter";
+    session_start();
+
+    $titre = "Airbeer - Se Connecter";
 
     spl_autoload_register(function ($class_name) { include $class_name . '.php';});
 
     if (!empty($_POST)) {
         if (isset($_POST['Utilisateur']) AND isset($_POST['Mdp']) AND !empty($_POST['Utilisateur']) AND !empty($_POST['Mdp'])) {
-            $bdd = new MyBD("sqlite:" . __DIR__ . DIRECTORY_SEPARATOR . "baseUsers.db");
+            $bdd = new MyBD("sqlite:" . __DIR__ . DIRECTORY_SEPARATOR . "AirBeer.db");
 
             $utilisateur =  htmlspecialchars($_POST['Utilisateur']);
             $mdp = htmlspecialchars($_POST['Mdp']);
@@ -18,11 +19,6 @@
                 $_SESSION['ID'] = $result[0][0]['ID'];
                 $_SESSION['connection'] = $result[0][0]['PSEUDO'];
                 $_SESSION['PDP'] = $result[0][0]['PDP'];
-                if ($result[0][0]['TYPE'] == 1) {
-                    $_SESSION['admin'] = true;
-                }   else {
-                    $_SESSION['admin'] = false;
-                }
             }
             $message = $result[1];
 
@@ -38,10 +34,10 @@
 ?>
 
 <html lang="fr" class="translated-1tr">
-    <?php require Airbeer."/partir/Head.php"; ?>
+    <?php include("Head.php"); ?>
     <body class="text-center">
         <div class="container">
-            <?php require Airbeer."/partir/Nav.php";
+            <?php include("Nav.php");
             if (isset($message) AND !empty($message)) :
                 if($message[0] == 'false') :?>
                     <div class="alert alert-danger" role="alert">
@@ -79,6 +75,6 @@
                 <p></br>Vous n'avez pas de compte ? <a href="s'incrire.php">S'incrire</a></p>
             </form>
         </main>
-        <?php include("footer.php"); ?>
+        <?php include("Footer.php"); ?>
     </body>
 </html>

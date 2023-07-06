@@ -1,13 +1,40 @@
-*{
-    background: #3f4253;
-    color: white!important;
-    margin: 0;
+body {
+    font-family: poppins, sans-serif !important;
+    background-color: #fff ;
+    color: #1e1e2f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 16px
 }
 
-body{
-    background: #51546c;
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
 }
 
-form {
-    margin: 100px 1000px !important;
+#profil {
+    max-width: 500px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'contenue menu';
+    grid-template-columns: 65% 35%;
+}
+
+.grid-item-contenue {
+    grid-area: contenue;
+
+}
+
+.grid-item-menu {
+    grid-area: menu;
+}
+
+.marketing {
+    padding-bottom: 12px;
+    padding-top: 12px;
 }
